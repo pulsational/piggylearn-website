@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PiggyLearn - Teach Your Kids Financial Literacy Through Play</title>
+    <meta name="description" content="A safe, fun virtual banking app that teaches kids ages 6-14 about money management, saving, and financial responsibility.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .heading-font {
+            font-family: 'Fredoka', sans-serif;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        @keyframes coin-flip {
+            0% { transform: rotateY(0deg); }
+            100% { transform: rotateY(360deg); }
+        }
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+        .coin-animation {
+            animation: coin-flip 2s ease-in-out infinite;
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #10b981 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        [data-lang] {
+            display: none;
+        }
+        [data-lang].active {
+            display: block;
+        }
+        [data-lang-inline] {
+            display: none;
+        }
+        [data-lang-inline].active {
+            display: inline;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-2">
+                    <img src="assets/icon.png" alt="PiggyLearn Logo" class="w-10 h-10 rounded-xl">
+                    <span class="text-2xl font-bold heading-font gradient-text">PiggyLearn</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#features" class="text-gray-700 hover:text-green-600 transition">
+                        <span data-lang-inline="en" class="active">Features</span>
+                        <span data-lang-inline="es">Características</span>
+                        <span data-lang-inline="fr">Fonctionnalités</span>
+                        <span data-lang-inline="zh">功能</span>
+                    </a>
+                    <a href="#pricing" class="text-gray-700 hover:text-green-600 transition">
+                        <span data-lang-inline="en" class="active">Pricing</span>
+                        <span data-lang-inline="es">Precios</span>
+                        <span data-lang-inline="fr">Tarifs</span>
+                        <span data-lang-inline="zh">价格</span>
+                    </a>
+                    <a href="#faq" class="text-gray-700 hover:text-green-600 transition">FAQ</a>
+                    <select id="lang-selector" class="border border-gray-300 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-green-500">
+                        <option value="en">🇺🇸 EN</option>
+                        <option value="es">🇪🇸 ES</option>
+                        <option value="fr">🇫🇷 FR</option>
+                        <option value="zh">🇨🇳 中文</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-16 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-white">
+                    <div data-lang="en" class="active">
+                        <h1 class="text-5xl md:text-6xl font-bold heading-font mb-6">
+                            Teach Your Kids Financial Literacy Through Play
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-green-50">
+                            Give your children a head start on money management with our safe, fun virtual banking app.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#pricing" class="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition text-center">
+                                Start Free Today
+                            </a>
+                            <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-green-600 transition text-center">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+                    <div data-lang="es">
+                        <h1 class="text-5xl md:text-6xl font-bold heading-font mb-6">
+                            Enseña a tus Hijos Educación Financiera Jugando
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-green-50">
+                            Dale a tus hijos una ventaja en la gestión del dinero con nuestra aplicación bancaria virtual segura y divertida.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#pricing" class="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition text-center">
+                                Comienza Gratis Hoy
+                            </a>
+                            <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-green-600 transition text-center">
+                                Aprende Más
+                            </a>
+                        </div>
+                    </div>
+                    <div data-lang="fr">
+                        <h1 class="text-5xl md:text-6xl font-bold heading-font mb-6">
+                            Enseignez l'Éducation Financière à vos Enfants par le Jeu
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-green-50">
+                            Donnez à vos enfants une longueur d'avance sur la gestion de l'argent avec notre application bancaire virtuelle sûre et amusante.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#pricing" class="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition text-center">
+                                Commencer Gratuitement
+                            </a>
+                            <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-green-600 transition text-center">
+                                En Savoir Plus
+                            </a>
+                        </div>
+                    </div>
+                    <div data-lang="zh">
+                        <h1 class="text-5xl md:text-6xl font-bold heading-font mb-6">
+                            通过游戏教孩子理财知识
+                        </h1>
+                        <p class="text-xl md:text-2xl mb-8 text-green-50">
+                            用我们安全、有趣的虚拟银行应用，让您的孩子在理财方面领先一步。
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4">
+                            <a href="#pricing" class="bg-white text-green-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition text-center">
+                                免费开始
+                            </a>
+                            <a href="#features" class="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-green-600 transition text-center">
+                                了解更多
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="float-animation">
+                        <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md mx-auto">
+                            <div class="text-center">
+                                <div class="text-6xl mb-4 coin-animation inline-block">🪙</div>
+                                <h3 class="text-2xl font-bold text-gray-800 mb-2 heading-font">Virtual Piggy Bank</h3>
+                                <div class="bg-green-100 rounded-xl p-6 mb-4">
+                                    <p class="text-sm text-gray-600 mb-2">Savings Goal: New Bike</p>
+                                    <div class="w-full bg-gray-200 rounded-full h-4 mb-2">
+                                        <div class="bg-gradient-to-r from-green-400 to-green-600 h-4 rounded-full" style="width: 65%"></div>
+                                    </div>
+                                    <p class="text-2xl font-bold text-green-600">$65 / $100</p>
+                                </div>
+                                <div class="flex justify-around text-center">
+                                    <div>
+                                        <p class="text-sm text-gray-500">Weekly Allowance</p>
+                                        <p class="text-lg font-bold text-blue-600">$10</p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-500">Total Saved</p>
+                                        <p class="text-lg font-bold text-green-600">$65</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Hero Image -->
+                <div class="flex justify-center items-center">
+                    <div class="relative">
+                        <img src="assets/mascot/jasper-waving.png" alt="Jasper Mascot" class="w-full max-w-md float-animation drop-shadow-2xl">
+                        <div class="absolute top-10 right-0 bg-white rounded-full p-4 shadow-lg coin-animation">
+                            <span class="text-4xl">💰</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto">
+                <div data-lang="en" class="active">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        Kids Don't Learn Money Skills in School
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Only 21 states require financial literacy education. Without proper guidance, children grow up unprepared to manage money, save for goals, or understand basic banking concepts.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <div class="bg-red-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">😰</div>
+                            <h3 class="font-bold text-lg mb-2">No Real-World Practice</h3>
+                            <p class="text-gray-600">Kids learn math but never apply it to budgeting or saving.</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">💸</div>
+                            <h3 class="font-bold text-lg mb-2">Poor Money Habits</h3>
+                            <p class="text-gray-600">Without guidance, they develop spending habits that follow them into adulthood.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">🤷</div>
+                            <h3 class="font-bold text-lg mb-2">Parents Feel Overwhelmed</h3>
+                            <p class="text-gray-600">Teaching finance concepts can feel complicated and boring.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-lang="es">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        Los Niños No Aprenden Habilidades Financieras en la Escuela
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Solo 21 estados requieren educación en alfabetización financiera. Sin orientación adecuada, los niños crecen sin preparación para administrar dinero, ahorrar para metas o entender conceptos bancarios básicos.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <div class="bg-red-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">😰</div>
+                            <h3 class="font-bold text-lg mb-2">Sin Práctica Real</h3>
+                            <p class="text-gray-600">Los niños aprenden matemáticas pero nunca las aplican a presupuestos o ahorros.</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">💸</div>
+                            <h3 class="font-bold text-lg mb-2">Malos Hábitos de Dinero</h3>
+                            <p class="text-gray-600">Sin orientación, desarrollan hábitos de gasto que los siguen hasta la edad adulta.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">🤷</div>
+                            <h3 class="font-bold text-lg mb-2">Padres Abrumados</h3>
+                            <p class="text-gray-600">Enseñar conceptos financieros puede parecer complicado y aburrido.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-lang="fr">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        Les Enfants N'Apprennent Pas les Compétences Financières à l'École
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        Seulement 21 États exigent une éducation à la littératie financière. Sans orientation appropriée, les enfants grandissent sans être préparés à gérer l'argent, épargner pour des objectifs ou comprendre les concepts bancaires de base.
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <div class="bg-red-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">😰</div>
+                            <h3 class="font-bold text-lg mb-2">Pas de Pratique Réelle</h3>
+                            <p class="text-gray-600">Les enfants apprennent les maths mais ne les appliquent jamais au budget ou à l'épargne.</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">💸</div>
+                            <h3 class="font-bold text-lg mb-2">Mauvaises Habitudes d'Argent</h3>
+                            <p class="text-gray-600">Sans orientation, ils développent des habitudes de dépense qui les suivent à l'âge adulte.</p>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">🤷</div>
+                            <h3 class="font-bold text-lg mb-2">Parents Débordés</h3>
+                            <p class="text-gray-600">Enseigner les concepts financiers peut sembler compliqué et ennuyeux.</p>
+                        </div>
+                    </div>
+                </div>
+                <div data-lang="zh">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        孩子在学校学不到理财技能
+                    </h2>
+                    <p class="text-xl text-gray-600 mb-8">
+                        只有21个州要求金融素养教育。如果没有适当的指导，孩子长大后无法管理金钱、储蓄或理解基本的银行概念。
+                    </p>
+                    <div class="grid md:grid-cols-3 gap-8 mt-12">
+                        <div class="bg-red-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">😰</div>
+                            <h3 class="font-bold text-lg mb-2">缺乏实践</h3>
+                            <p class="text-gray-600">孩子学习数学但从未将其应用于预算或储蓄。</p>
+                        </div>
+                        <div class="bg-orange-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">💸</div>
+                            <h3 class="font-bold text-lg mb-2">不良金钱习惯</h3>
+                            <p class="text-gray-600">没有指导，他们会养成延续到成年的消费习惯。</p>
+                        </div>
+                        <div class="bg-yellow-50 p-6 rounded-xl">
+                            <div class="text-4xl mb-3">🤷</div>
+                            <h3 class="font-bold text-lg mb-2">家长不知所措</h3>
+                            <p class="text-gray-600">教授金融概念可能感觉复杂且无聊。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-green-50 to-blue-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-3xl mx-auto mb-12">
+                <div data-lang="en" class="active">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        Learning Through Play, Not Lectures
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        PiggyLearn makes financial education fun and interactive. Kids manage their own virtual bank account with real coins, learn by doing, and develop healthy money habits—all under your watchful guidance.
+                    </p>
+                </div>
+                <div data-lang="es">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        Aprender Jugando, No con Conferencias
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        PiggyLearn hace que la educación financiera sea divertida e interactiva. Los niños administran su propia cuenta bancaria virtual con monedas reales, aprenden haciendo y desarrollan hábitos de dinero saludables, todo bajo tu atenta supervisión.
+                    </p>
+                </div>
+                <div data-lang="fr">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        Apprendre par le Jeu, Pas par les Cours
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        PiggyLearn rend l'éducation financière amusante et interactive. Les enfants gèrent leur propre compte bancaire virtuel avec de vraies pièces, apprennent en faisant et développent de saines habitudes d'argent—le tout sous votre surveillance attentive.
+                    </p>
+                </div>
+                <div data-lang="zh">
+                    <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-6">
+                        通过游戏学习，而非说教
+                    </h2>
+                    <p class="text-xl text-gray-600">
+                        PiggyLearn让金融教育变得有趣和互动。孩子们用真实的硬币管理自己的虚拟银行账户，通过实践学习，并培养健康的理财习惯——全部在您的监督下进行。
+                    </p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white rounded-2xl shadow-xl p-8">
+                    <div class="space-y-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 rounded-full p-3 flex-shrink-0">
+                                <span class="text-2xl">✅</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="en" class="active">Safe Virtual Environment</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="es">Entorno Virtual Seguro</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="fr">Environnement Virtuel Sûr</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="zh">安全的虚拟环境</h3>
+                                <p class="text-gray-600" data-lang-inline="en" class="active">No real money at risk—100% virtual coins</p>
+                                <p class="text-gray-600" data-lang-inline="es">Sin dinero real en riesgo: 100% monedas virtuales</p>
+                                <p class="text-gray-600" data-lang-inline="fr">Pas d'argent réel en jeu—100% pièces virtuelles</p>
+                                <p class="text-gray-600" data-lang-inline="zh">无真实金钱风险——100%虚拟硬币</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 rounded-full p-3 flex-shrink-0">
+                                <span class="text-2xl">🎮</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="en" class="active">Gamified Learning</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="es">Aprendizaje Gamificado</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="fr">Apprentissage Gamifié</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="zh">游戏化学习</h3>
+                                <p class="text-gray-600" data-lang-inline="en" class="active">Earn rewards, unlock achievements, reach goals</p>
+                                <p class="text-gray-600" data-lang-inline="es">Gana recompensas, desbloquea logros, alcanza metas</p>
+                                <p class="text-gray-600" data-lang-inline="fr">Gagnez des récompenses, débloquez des succès, atteignez des objectifs</p>
+                                <p class="text-gray-600" data-lang-inline="zh">赚取奖励、解锁成就、达成目标</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 rounded-full p-3 flex-shrink-0">
+                                <span class="text-2xl">👨‍👩‍👧‍👦</span>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="en" class="active">Parent Dashboard</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="es">Panel de Padres</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="fr">Tableau de Bord Parents</h3>
+                                <h3 class="font-bold text-lg mb-1" data-lang-inline="zh">家长仪表板</h3>
+                                <p class="text-gray-600" data-lang-inline="en" class="active">Full control and visibility over all activities</p>
+                                <p class="text-gray-600" data-lang-inline="es">Control total y visibilidad sobre todas las actividades</p>
+                                <p class="text-gray-600" data-lang-inline="fr">Contrôle total et visibilité sur toutes les activités</p>
+                                <p class="text-gray-600" data-lang-inline="zh">对所有活动的完全控制和可见性</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <div class="text-8xl mb-4">🎯</div>
+                    <p class="text-2xl font-bold text-gray-800 heading-font">
+                        <span data-lang-inline="en" class="active">Education + Fun = Lasting Skills</span>
+                        <span data-lang-inline="es">Educación + Diversión = Habilidades Duraderas</span>
+                        <span data-lang-inline="fr">Éducation + Plaisir = Compétences Durables</span>
+                        <span data-lang-inline="zh">教育 + 乐趣 = 持久技能</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">
+                    <span data-lang-inline="en" class="active">Powerful Features for Growing Minds</span>
+                    <span data-lang-inline="es">Características Poderosas para Mentes en Crecimiento</span>
+                    <span data-lang-inline="fr">Fonctionnalités Puissantes pour les Esprits en Croissance</span>
+                    <span data-lang-inline="zh">强大功能助力成长</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">🏦</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Virtual Bank Account</span>
+                        <span data-lang-inline="es">Cuenta Bancaria Virtual</span>
+                        <span data-lang-inline="fr">Compte Bancaire Virtuel</span>
+                        <span data-lang-inline="zh">虚拟银行账户</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Each child gets their own account to deposit, withdraw, and track their virtual coins.</span>
+                        <span data-lang-inline="es">Cada niño obtiene su propia cuenta para depositar, retirar y rastrear sus monedas virtuales.</span>
+                        <span data-lang-inline="fr">Chaque enfant obtient son propre compte pour déposer, retirer et suivre ses pièces virtuelles.</span>
+                        <span data-lang-inline="zh">每个孩子都有自己的账户来存入、提取和追踪虚拟硬币。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Allowance Management</span>
+                        <span data-lang-inline="es">Gestión de Mesada</span>
+                        <span data-lang-inline="fr">Gestion de l'Argent de Poche</span>
+                        <span data-lang-inline="zh">零花钱管理</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Set up recurring allowances, bonus rewards, or one-time deposits with ease.</span>
+                        <span data-lang-inline="es">Configure mesadas recurrentes, recompensas adicionales o depósitos únicos con facilidad.</span>
+                        <span data-lang-inline="fr">Configurez des argent de poche récurrents, des bonus ou des dépôts ponctuels facilement.</span>
+                        <span data-lang-inline="zh">轻松设置定期零花钱、奖励或一次性存款。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">🎯</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Savings Goals</span>
+                        <span data-lang-inline="es">Metas de Ahorro</span>
+                        <span data-lang-inline="fr">Objectifs d'Épargne</span>
+                        <span data-lang-inline="zh">储蓄目标</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Kids set goals for toys, games, or experiences and watch their progress grow.</span>
+                        <span data-lang-inline="es">Los niños establecen metas para juguetes, juegos o experiencias y ven crecer su progreso.</span>
+                        <span data-lang-inline="fr">Les enfants fixent des objectifs pour des jouets, des jeux ou des expériences et regardent leurs progrès grandir.</span>
+                        <span data-lang-inline="zh">孩子为玩具、游戏或体验设定目标并观察进度增长。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">🔒</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Parental Controls</span>
+                        <span data-lang-inline="es">Controles Parentales</span>
+                        <span data-lang-inline="fr">Contrôles Parentaux</span>
+                        <span data-lang-inline="zh">家长控制</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Approve transactions, monitor activity, and guide learning every step of the way.</span>
+                        <span data-lang-inline="es">Aprueba transacciones, monitorea actividad y guía el aprendizaje en cada paso.</span>
+                        <span data-lang-inline="fr">Approuvez les transactions, surveillez l'activité et guidez l'apprentissage à chaque étape.</span>
+                        <span data-lang-inline="zh">批准交易、监控活动并在每一步指导学习。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Transaction History</span>
+                        <span data-lang-inline="es">Historial de Transacciones</span>
+                        <span data-lang-inline="fr">Historique des Transactions</span>
+                        <span data-lang-inline="zh">交易历史</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">See where money comes from and where it goes—building awareness and responsibility.</span>
+                        <span data-lang-inline="es">Ve de dónde viene el dinero y a dónde va: construyendo conciencia y responsabilidad.</span>
+                        <span data-lang-inline="fr">Voyez d'où vient l'argent et où il va—en développant la conscience et la responsabilité.</span>
+                        <span data-lang-inline="zh">查看钱从哪里来、去哪里——培养意识和责任感。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">🏆</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Achievements & Badges</span>
+                        <span data-lang-inline="es">Logros y Medallas</span>
+                        <span data-lang-inline="fr">Succès et Badges</span>
+                        <span data-lang-inline="zh">成就和徽章</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Unlock rewards for reaching milestones and practicing good money habits.</span>
+                        <span data-lang-inline="es">Desbloquea recompensas por alcanzar hitos y practicar buenos hábitos de dinero.</span>
+                        <span data-lang-inline="fr">Débloquez des récompenses en atteignant des jalons et en pratiquant de bonnes habitudes d'argent.</span>
+                        <span data-lang-inline="zh">通过达成里程碑和养成良好理财习惯解锁奖励。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 7 -->
+                <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">📱</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">iOS & Android</span>
+                        <span data-lang-inline="es">iOS y Android</span>
+                        <span data-lang-inline="fr">iOS et Android</span>
+                        <span data-lang-inline="zh">iOS 和 Android</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Available on both platforms. Kids can check their balance anywhere, anytime.</span>
+                        <span data-lang-inline="es">Disponible en ambas plataformas. Los niños pueden verificar su saldo en cualquier lugar, en cualquier momento.</span>
+                        <span data-lang-inline="fr">Disponible sur les deux plateformes. Les enfants peuvent vérifier leur solde n'importe où, n'importe quand.</span>
+                        <span data-lang-inline="zh">在两个平台上均可使用。孩子可以随时随地查看余额。</span>
+                    </p>
+                </div>
+
+                <!-- Feature 8 -->
+                <div class="bg-gradient-to-br from-red-50 to-red-100 p-6 rounded-2xl card-hover">
+                    <div class="text-5xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold mb-3 heading-font">
+                        <span data-lang-inline="en" class="active">Multi-Language Support</span>
+                        <span data-lang-inline="es">Soporte Multi-Idioma</span>
+                        <span data-lang-inline="fr">Support Multilingue</span>
+                        <span data-lang-inline="zh">多语言支持</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Available in English, Spanish, French, and Chinese for global families.</span>
+                        <span data-lang-inline="es">Disponible en inglés, español, francés y chino para familias globales.</span>
+                        <span data-lang-inline="fr">Disponible en anglais, espagnol, français et chinois pour les familles du monde entier.</span>
+                        <span data-lang-inline="zh">支持英语、西班牙语、法语和中文，服务全球家庭。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">
+                    <span data-lang-inline="en" class="active">Simple, Family-Friendly Pricing</span>
+                    <span data-lang-inline="es">Precios Simples y Familiares</span>
+                    <span data-lang-inline="fr">Tarification Simple et Familiale</span>
+                    <span data-lang-inline="zh">简单、家庭友好的定价</span>
+                </h2>
+                <p class="text-xl text-gray-600">
+                    <span data-lang-inline="en" class="active">Start free, upgrade when your family grows</span>
+                    <span data-lang-inline="es">Comienza gratis, actualiza cuando tu familia crece</span>
+                    <span data-lang-inline="fr">Commencez gratuitement, passez à la version supérieure lorsque votre famille grandit</span>
+                    <span data-lang-inline="zh">免费开始，随着家庭成长升级</span>
+                </p>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Free Plan -->
+                <div class="bg-white rounded-2xl shadow-lg p-8 border-2 border-gray-200">
+                    <h3 class="text-2xl font-bold heading-font mb-2">
+                        <span data-lang-inline="en" class="active">Free</span>
+                        <span data-lang-inline="es">Gratis</span>
+                        <span data-lang-inline="fr">Gratuit</span>
+                        <span data-lang-inline="zh">免费</span>
+                    </h3>
+                    <p class="text-gray-600 mb-6">
+                        <span data-lang-inline="en" class="active">Perfect for getting started</span>
+                        <span data-lang-inline="es">Perfecto para comenzar</span>
+                        <span data-lang-inline="fr">Parfait pour commencer</span>
+                        <span data-lang-inline="zh">非常适合入门</span>
+                    </p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">$0</span>
+                        <span class="text-gray-600">/
+                            <span data-lang-inline="en" class="active">month</span>
+                            <span data-lang-inline="es">mes</span>
+                            <span data-lang-inline="fr">mois</span>
+                            <span data-lang-inline="zh">月</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">1 child account</span>
+                            <span data-lang-inline="es">1 cuenta de niño</span>
+                            <span data-lang-inline="fr">1 compte enfant</span>
+                            <span data-lang-inline="zh">1个儿童账户</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">Virtual bank account</span>
+                            <span data-lang-inline="es">Cuenta bancaria virtual</span>
+                            <span data-lang-inline="fr">Compte bancaire virtuel</span>
+                            <span data-lang-inline="zh">虚拟银行账户</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">Savings goals</span>
+                            <span data-lang-inline="es">Metas de ahorro</span>
+                            <span data-lang-inline="fr">Objectifs d'épargne</span>
+                            <span data-lang-inline="zh">储蓄目标</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-green-500 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">Basic parental controls</span>
+                            <span data-lang-inline="es">Controles parentales básicos</span>
+                            <span data-lang-inline="fr">Contrôles parentaux de base</span>
+                            <span data-lang-inline="zh">基本家长控制</span>
+                        </li>
+                    </ul>
+                    <a href="#download" class="block w-full bg-gray-200 text-gray-800 text-center px-6 py-3 rounded-xl font-semibold hover:bg-gray-300 transition">
+                        <span data-lang-inline="en" class="active">Get Started Free</span>
+                        <span data-lang-inline="es">Comienza Gratis</span>
+                        <span data-lang-inline="fr">Commencer Gratuitement</span>
+                        <span data-lang-inline="zh">免费开始</span>
+                    </a>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="bg-gradient-to-br from-green-500 to-blue-500 rounded-2xl shadow-xl p-8 text-white border-4 border-green-400 relative">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-gray-900 px-4 py-1 rounded-full text-sm font-bold">
+                        <span data-lang-inline="en" class="active">POPULAR</span>
+                        <span data-lang-inline="es">POPULAR</span>
+                        <span data-lang-inline="fr">POPULAIRE</span>
+                        <span data-lang-inline="zh">热门</span>
+                    </div>
+                    <h3 class="text-2xl font-bold heading-font mb-2">Premium</h3>
+                    <p class="text-green-100 mb-6">
+                        <span data-lang-inline="en" class="active">For growing families</span>
+                        <span data-lang-inline="es">Para familias en crecimiento</span>
+                        <span data-lang-inline="fr">Pour les familles grandissantes</span>
+                        <span data-lang-inline="zh">适合成长中的家庭</span>
+                    </p>
+                    <div class="mb-6">
+                        <span class="text-5xl font-bold">$4.99</span>
+                        <span class="text-green-100">/
+                            <span data-lang-inline="en" class="active">month</span>
+                            <span data-lang-inline="es">mes</span>
+                            <span data-lang-inline="fr">mois</span>
+                            <span data-lang-inline="zh">月</span>
+                        </span>
+                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-yellow-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span class="font-semibold">
+                                <span data-lang-inline="en" class="active">Unlimited children</span>
+                                <span data-lang-inline="es">Niños ilimitados</span>
+                                <span data-lang-inline="fr">Enfants illimités</span>
+                                <span data-lang-inline="zh">无限儿童</span>
+                            </span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-yellow-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">All Free features</span>
+                            <span data-lang-inline="es">Todas las características gratuitas</span>
+                            <span data-lang-inline="fr">Toutes les fonctionnalités gratuites</span>
+                            <span data-lang-inline="zh">所有免费功能</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-yellow-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">Advanced analytics</span>
+                            <span data-lang-inline="es">Análisis avanzados</span>
+                            <span data-lang-inline="fr">Analyses avancées</span>
+                            <span data-lang-inline="zh">高级分析</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-yellow-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">Custom allowance rules</span>
+                            <span data-lang-inline="es">Reglas de mesada personalizadas</span>
+                            <span data-lang-inline="fr">Règles d'argent de poche personnalisées</span>
+                            <span data-lang-inline="zh">自定义零花钱规则</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-yellow-300 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            <span data-lang-inline="en" class="active">Priority support</span>
+                            <span data-lang-inline="es">Soporte prioritario</span>
+                            <span data-lang-inline="fr">Support prioritaire</span>
+                            <span data-lang-inline="zh">优先支持</span>
+                        </li>
+                    </ul>
+                    <a href="#download" class="block w-full bg-white text-green-600 text-center px-6 py-3 rounded-xl font-semibold hover:bg-gray-100 transition">
+                        <span data-lang-inline="en" class="active">Start Premium Trial</span>
+                        <span data-lang-inline="es">Iniciar Prueba Premium</span>
+                        <span data-lang-inline="fr">Démarrer l'Essai Premium</span>
+                        <span data-lang-inline="zh">开始高级试用</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">
+                    <span data-lang-inline="en" class="active">Parents Love PiggyLearn</span>
+                    <span data-lang-inline="es">Los Padres Aman PiggyLearn</span>
+                    <span data-lang-inline="fr">Les Parents Adorent PiggyLearn</span>
+                    <span data-lang-inline="zh">家长喜欢 PiggyLearn</span>
+                </h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-green-50 p-6 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-green-200 rounded-full flex items-center justify-center text-2xl mr-3">👨‍👩‍👧</div>
+                        <div>
+                            <h4 class="font-bold">Sarah M.</h4>
+                            <p class="text-sm text-gray-600">
+                                <span data-lang-inline="en" class="active">Mom of 2</span>
+                                <span data-lang-inline="es">Mamá de 2</span>
+                                <span data-lang-inline="fr">Maman de 2</span>
+                                <span data-lang-inline="zh">2个孩子的妈妈</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        <span data-lang-inline="en" class="active">"My kids are actually excited to save money now! They check their balance every day and set goals for things they want. It's transformed how we talk about money."</span>
+                        <span data-lang-inline="es">"¡Mis hijos ahora están emocionados por ahorrar dinero! Revisan su saldo todos los días y establecen metas para las cosas que quieren. Ha transformado cómo hablamos sobre el dinero."</span>
+                        <span data-lang-inline="fr">"Mes enfants sont vraiment enthousiasmés par l'épargne maintenant ! Ils vérifient leur solde tous les jours et se fixent des objectifs pour ce qu'ils veulent. Cela a transformé notre façon de parler d'argent."</span>
+                        <span data-lang-inline="zh">"我的孩子现在真的很兴奋地存钱！他们每天检查余额并为想要的东西设定目标。这改变了我们谈论金钱的方式。"</span>
+                    </p>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-blue-50 p-6 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-200 rounded-full flex items-center justify-center text-2xl mr-3">👨‍👧‍👦</div>
+                        <div>
+                            <h4 class="font-bold">Michael T.</h4>
+                            <p class="text-sm text-gray-600">
+                                <span data-lang-inline="en" class="active">Dad of 3</span>
+                                <span data-lang-inline="es">Papá de 3</span>
+                                <span data-lang-inline="fr">Papa de 3</span>
+                                <span data-lang-inline="zh">3个孩子的爸爸</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        <span data-lang-inline="en" class="active">"Finally, a way to teach financial responsibility without the risk! The parental controls give me peace of mind, and the kids love the gamification."</span>
+                        <span data-lang-inline="es">"¡Finalmente, una forma de enseñar responsabilidad financiera sin riesgo! Los controles parentales me dan tranquilidad, y a los niños les encanta la gamificación."</span>
+                        <span data-lang-inline="fr">"Enfin, un moyen d'enseigner la responsabilité financière sans risque ! Les contrôles parentaux me rassurent, et les enfants adorent la gamification."</span>
+                        <span data-lang-inline="zh">"终于有一种无风险教授财务责任的方法了！家长控制让我安心，孩子们喜欢游戏化。"</span>
+                    </p>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-purple-50 p-6 rounded-2xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full flex items-center justify-center text-2xl mr-3">👩‍👧</div>
+                        <div>
+                            <h4 class="font-bold">Jennifer L.</h4>
+                            <p class="text-sm text-gray-600">
+                                <span data-lang-inline="en" class="active">Mom of 1</span>
+                                <span data-lang-inline="es">Mamá de 1</span>
+                                <span data-lang-inline="fr">Maman de 1</span>
+                                <span data-lang-inline="zh">1个孩子的妈妈</span>
+                            </p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">
+                        <span data-lang-inline="en" class="active">"My 8-year-old daughter saved up 200 virtual coins for a goal all by herself. She's learning patience, planning, and the value of delayed gratification!"</span>
+                        <span data-lang-inline="es">"Mi hija de 8 años ahorró 200 monedas virtuales para una meta por sí sola. ¡Está aprendiendo paciencia, planificación y el valor de la gratificación diferida!"</span>
+                        <span data-lang-inline="fr">"Ma fille de 8 ans a économisé 200 pièces virtuelles pour un objectif toute seule. Elle apprend la patience, la planification et la valeur de la gratification différée !"</span>
+                        <span data-lang-inline="zh">"我8岁的女儿自己为一个目标存了200枚虚拟硬币。她正在学习耐心、计划和延迟满足的价值！"</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="py-16 px-4 sm:px-6 lg:px-8 gradient-bg">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold heading-font text-white mb-6">
+                <span data-lang-inline="en" class="active">Download PiggyLearn Today</span>
+                <span data-lang-inline="es">Descarga PiggyLearn Hoy</span>
+                <span data-lang-inline="fr">Téléchargez PiggyLearn Aujourd'hui</span>
+                <span data-lang-inline="zh">立即下载 PiggyLearn</span>
+            </h2>
+            <p class="text-xl text-green-100 mb-8">
+                <span data-lang-inline="en" class="active">Available on iOS and Android</span>
+                <span data-lang-inline="es">Disponible en iOS y Android</span>
+                <span data-lang-inline="fr">Disponible sur iOS et Android</span>
+                <span data-lang-inline="zh">在 iOS 和 Android 上可用</span>
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+                <a href="https://apps.apple.com" target="_blank" class="inline-block">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='60'%3E%3Crect width='180' height='60' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='14' font-weight='bold'%3EApp Store%3C/text%3E%3C/svg%3E" alt="Download on App Store" class="h-14">
+                </a>
+                <a href="https://play.google.com" target="_blank" class="inline-block">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='60'%3E%3Crect width='180' height='60' rx='12' fill='%23000'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='white' font-family='Arial' font-size='14' font-weight='bold'%3EGoogle Play%3C/text%3E%3C/svg%3E" alt="Get it on Google Play" class="h-14">
+                </a>
+            </div>
+            <div class="text-white text-sm">
+                <span data-lang-inline="en" class="active">🔒 Safe • 🎮 Fun • 📚 Educational • 100% Virtual Currency</span>
+                <span data-lang-inline="es">🔒 Seguro • 🎮 Divertido • 📚 Educativo • 100% Moneda Virtual</span>
+                <span data-lang-inline="fr">🔒 Sûr • 🎮 Amusant • 📚 Éducatif • 100% Monnaie Virtuelle</span>
+                <span data-lang-inline="zh">🔒 安全 • 🎮 有趣 • 📚 教育性 • 100% 虚拟货币</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-16 px-4 sm:px-6 lg:px-8 bg-white">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold heading-font text-gray-900 mb-4">
+                    <span data-lang-inline="en" class="active">Frequently Asked Questions</span>
+                    <span data-lang-inline="es">Preguntas Frecuentes</span>
+                    <span data-lang-inline="fr">Questions Fréquemment Posées</span>
+                    <span data-lang-inline="zh">常见问题</span>
+                </h2>
+            </div>
+            <div class="space-y-6">
+                <!-- FAQ 1 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        <span data-lang-inline="en" class="active">Is PiggyLearn safe for kids?</span>
+                        <span data-lang-inline="es">¿Es PiggyLearn seguro para niños?</span>
+                        <span data-lang-inline="fr">PiggyLearn est-il sûr pour les enfants ?</span>
+                        <span data-lang-inline="zh">PiggyLearn 对孩子安全吗？</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Absolutely! PiggyLearn uses 100% virtual currency—no real money is ever at risk. Parents have full control and visibility over all activities through our comprehensive parental dashboard.</span>
+                        <span data-lang-inline="es">¡Absolutamente! PiggyLearn usa 100% moneda virtual: nunca hay dinero real en riesgo. Los padres tienen control total y visibilidad sobre todas las actividades a través de nuestro panel de control parental integral.</span>
+                        <span data-lang-inline="fr">Absolument ! PiggyLearn utilise une monnaie 100% virtuelle—aucun argent réel n'est jamais en danger. Les parents ont un contrôle total et une visibilité sur toutes les activités via notre tableau de bord parental complet.</span>
+                        <span data-lang-inline="zh">绝对安全！PiggyLearn 使用 100% 虚拟货币——没有真实金钱风险。家长通过我们全面的家长仪表板对所有活动拥有完全控制和可见性。</span>
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        <span data-lang-inline="en" class="active">What age is PiggyLearn appropriate for?</span>
+                        <span data-lang-inline="es">¿Para qué edad es apropiado PiggyLearn?</span>
+                        <span data-lang-inline="fr">Pour quel âge PiggyLearn est-il approprié ?</span>
+                        <span data-lang-inline="zh">PiggyLearn 适合什么年龄？</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">PiggyLearn is designed for kids ages 6-14. Younger children can learn basic counting and saving concepts, while older kids can explore more advanced topics like budgeting and goal-setting.</span>
+                        <span data-lang-inline="es">PiggyLearn está diseñado para niños de 6 a 14 años. Los niños más pequeños pueden aprender conceptos básicos de conteo y ahorro, mientras que los mayores pueden explorar temas más avanzados como presupuestos y establecimiento de metas.</span>
+                        <span data-lang-inline="fr">PiggyLearn est conçu pour les enfants de 6 à 14 ans. Les plus jeunes peuvent apprendre des concepts de base de comptage et d'épargne, tandis que les plus âgés peuvent explorer des sujets plus avancés comme le budget et la fixation d'objectifs.</span>
+                        <span data-lang-inline="zh">PiggyLearn 专为 6-14 岁的孩子设计。年幼的孩子可以学习基本的计数和储蓄概念，而年长的孩子可以探索更高级的主题，如预算和目标设定。</span>
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        <span data-lang-inline="en" class="active">Can I cancel my Premium subscription anytime?</span>
+                        <span data-lang-inline="es">¿Puedo cancelar mi suscripción Premium en cualquier momento?</span>
+                        <span data-lang-inline="fr">Puis-je annuler mon abonnement Premium à tout moment ?</span>
+                        <span data-lang-inline="zh">我可以随时取消高级订阅吗？</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Yes! You can cancel your Premium subscription at any time with no penalty. If you cancel, you'll retain Premium features until the end of your billing cycle, then automatically revert to the Free plan.</span>
+                        <span data-lang-inline="es">¡Sí! Puedes cancelar tu suscripción Premium en cualquier momento sin penalización. Si cancelas, conservarás las características Premium hasta el final de tu ciclo de facturación, luego volverás automáticamente al plan Gratuito.</span>
+                        <span data-lang-inline="fr">Oui ! Vous pouvez annuler votre abonnement Premium à tout moment sans pénalité. Si vous annulez, vous conserverez les fonctionnalités Premium jusqu'à la fin de votre cycle de facturation, puis reviendrez automatiquement au plan Gratuit.</span>
+                        <span data-lang-inline="zh">可以！您可以随时取消高级订阅，无需支付任何费用。如果取消，您将在计费周期结束前保留高级功能，然后自动恢复为免费计划。</span>
+                    </p>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        <span data-lang-inline="en" class="active">How does the virtual currency work?</span>
+                        <span data-lang-inline="es">¿Cómo funciona la moneda virtual?</span>
+                        <span data-lang-inline="fr">Comment fonctionne la monnaie virtuelle ?</span>
+                        <span data-lang-inline="zh">虚拟货币如何运作？</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">Virtual coins are not tied to real money. Parents can add coins to their child's account as rewards for chores, good behavior, or allowances. Kids can then save, set goals, and track their progress—all without any financial risk.</span>
+                        <span data-lang-inline="es">Las monedas virtuales no están vinculadas al dinero real. Los padres pueden agregar monedas a la cuenta de sus hijos como recompensa por tareas, buen comportamiento o mesadas. Luego, los niños pueden ahorrar, establecer metas y rastrear su progreso, todo sin ningún riesgo financiero.</span>
+                        <span data-lang-inline="fr">Les pièces virtuelles ne sont pas liées à de l'argent réel. Les parents peuvent ajouter des pièces au compte de leur enfant comme récompenses pour les tâches, le bon comportement ou l'argent de poche. Les enfants peuvent ensuite économiser, fixer des objectifs et suivre leurs progrès—le tout sans aucun risque financier.</span>
+                        <span data-lang-inline="zh">虚拟硬币不与真实货币挂钩。家长可以将硬币添加到孩子的账户中，作为家务、良好行为或零花钱的奖励。然后孩子可以储蓄、设定目标并追踪进度——完全没有任何财务风险。</span>
+                    </p>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="bg-gray-50 rounded-xl p-6">
+                    <h3 class="text-xl font-bold mb-3">
+                        <span data-lang-inline="en" class="active">Is there a difference between the iOS and Android versions?</span>
+                        <span data-lang-inline="es">¿Hay alguna diferencia entre las versiones de iOS y Android?</span>
+                        <span data-lang-inline="fr">Y a-t-il une différence entre les versions iOS et Android ?</span>
+                        <span data-lang-inline="zh">iOS 和 Android 版本有什么区别吗？</span>
+                    </h3>
+                    <p class="text-gray-700">
+                        <span data-lang-inline="en" class="active">No! Both versions have the exact same features and functionality. Your family can use a mix of iOS and Android devices, and all data syncs seamlessly across platforms.</span>
+                        <span data-lang-inline="es">¡No! Ambas versiones tienen exactamente las mismas características y funcionalidad. Tu familia puede usar una mezcla de dispositivos iOS y Android, y todos los datos se sincronizan sin problemas entre plataformas.</span>
+                        <span data-lang-inline="fr">Non ! Les deux versions ont exactement les mêmes fonctionnalités. Votre famille peut utiliser un mélange d'appareils iOS et Android, et toutes les données se synchronisent de manière transparente entre les plateformes.</span>
+                        <span data-lang-inline="zh">没有！两个版本具有完全相同的功能。您的家人可以混合使用 iOS 和 Android 设备，所有数据都会在平台之间无缝同步。</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="assets/icon.png" alt="PiggyLearn Logo" class="w-10 h-10 rounded-xl">
+                        <span class="text-2xl font-bold heading-font">PiggyLearn</span>
+                    </div>
+                    <p class="text-gray-400">
+                        <span data-lang-inline="en" class="active">Teaching financial literacy through play</span>
+                        <span data-lang-inline="es">Enseñando alfabetización financiera a través del juego</span>
+                        <span data-lang-inline="fr">Enseigner la littératie financière par le jeu</span>
+                        <span data-lang-inline="zh">通过游戏教授金融素养</span>
+                    </p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">
+                        <span data-lang-inline="en" class="active">Product</span>
+                        <span data-lang-inline="es">Producto</span>
+                        <span data-lang-inline="fr">Produit</span>
+                        <span data-lang-inline="zh">产品</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#features" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Features</span>
+                            <span data-lang-inline="es">Características</span>
+                            <span data-lang-inline="fr">Fonctionnalités</span>
+                            <span data-lang-inline="zh">功能</span>
+                        </a></li>
+                        <li><a href="#pricing" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Pricing</span>
+                            <span data-lang-inline="es">Precios</span>
+                            <span data-lang-inline="fr">Tarifs</span>
+                            <span data-lang-inline="zh">价格</span>
+                        </a></li>
+                        <li><a href="#download" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Download</span>
+                            <span data-lang-inline="es">Descargar</span>
+                            <span data-lang-inline="fr">Télécharger</span>
+                            <span data-lang-inline="zh">下载</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">
+                        <span data-lang-inline="en" class="active">Support</span>
+                        <span data-lang-inline="es">Soporte</span>
+                        <span data-lang-inline="fr">Support</span>
+                        <span data-lang-inline="zh">支持</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#faq" class="hover:text-white transition">FAQ</a></li>
+                        <li><a href="mailto:support@piggylearn.com" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Contact</span>
+                            <span data-lang-inline="es">Contacto</span>
+                            <span data-lang-inline="fr">Contact</span>
+                            <span data-lang-inline="zh">联系</span>
+                        </a></li>
+                        <li><a href="#" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Help Center</span>
+                            <span data-lang-inline="es">Centro de Ayuda</span>
+                            <span data-lang-inline="fr">Centre d'Aide</span>
+                            <span data-lang-inline="zh">帮助中心</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">
+                        <span data-lang-inline="en" class="active">Legal</span>
+                        <span data-lang-inline="es">Legal</span>
+                        <span data-lang-inline="fr">Légal</span>
+                        <span data-lang-inline="zh">法律</span>
+                    </h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Privacy Policy</span>
+                            <span data-lang-inline="es">Política de Privacidad</span>
+                            <span data-lang-inline="fr">Politique de Confidentialité</span>
+                            <span data-lang-inline="zh">隐私政策</span>
+                        </a></li>
+                        <li><a href="#" class="hover:text-white transition">
+                            <span data-lang-inline="en" class="active">Terms of Service</span>
+                            <span data-lang-inline="es">Términos de Servicio</span>
+                            <span data-lang-inline="fr">Conditions d'Utilisation</span>
+                            <span data-lang-inline="zh">服务条款</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 PiggyLearn. 
+                    <span data-lang-inline="en" class="active">All rights reserved.</span>
+                    <span data-lang-inline="es">Todos los derechos reservados.</span>
+                    <span data-lang-inline="fr">Tous droits réservés.</span>
+                    <span data-lang-inline="zh">版权所有。</span>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- i18n Script -->
+    <script>
+        const langSelector = document.getElementById('lang-selector');
+        
+        function setLanguage(lang) {
+            // Hide all language variants
+            document.querySelectorAll('[data-lang]').forEach(el => {
+                el.classList.remove('active');
+            });
+            document.querySelectorAll('[data-lang-inline]').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Show selected language
+            document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            document.querySelectorAll(`[data-lang-inline="${lang}"]`).forEach(el => {
+                el.classList.add('active');
+            });
+            
+            // Save preference
+            localStorage.setItem('preferred-language', lang);
+        }
+        
+        // Load saved language or detect browser language
+        const savedLang = localStorage.getItem('preferred-language');
+        const browserLang = navigator.language.split('-')[0];
+        const supportedLangs = ['en', 'es', 'fr', 'zh'];
+        const defaultLang = savedLang || (supportedLangs.includes(browserLang) ? browserLang : 'en');
+        
+        langSelector.value = defaultLang;
+        setLanguage(defaultLang);
+        
+        langSelector.addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
