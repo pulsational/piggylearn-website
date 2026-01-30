@@ -167,7 +167,7 @@
                     <div class="float-animation">
                         <div class="bg-white rounded-3xl shadow-2xl p-8 max-w-md mx-auto">
                             <div class="text-center">
-                                <div class="text-6xl mb-4 coin-animation inline-block"><img src="assets/decorations/coin-gold.png" alt="coin" class="inline-block w-5 h-5 align-middle"></div>
+                                <div class="text-6xl mb-4 coin-animation inline-block">🪙</div>
                                 <h3 class="text-2xl font-bold text-gray-800 mb-2 heading-font">Virtual Piggy Bank</h3>
                                 <div class="bg-green-100 rounded-xl p-6 mb-4">
                                     <p class="text-sm text-gray-600 mb-2">Savings Goal: New Bike</p>
@@ -196,7 +196,7 @@
                     <div class="relative">
                         <img src="assets/mascot/jasper-waving.png" alt="Jasper Mascot" class="w-full max-w-md float-animation drop-shadow-2xl">
                         <div class="absolute top-10 right-0 bg-white rounded-full p-4 shadow-lg coin-animation">
-                            <span class="text-4xl"><img src="assets/decorations/coin-gold.png" alt="coin" class="inline-block w-5 h-5 align-middle"></span>
+                            <span class="text-4xl">💰</span>
                         </div>
                     </div>
                 </div>
@@ -354,7 +354,7 @@
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
                             <div class="bg-green-100 rounded-full p-3 flex-shrink-0">
-                                <span class="text-2xl"><img src="assets/icons/status/checkmark.png" alt="check" class="inline-block w-5 h-5 align-middle"></span>
+                                <span class="text-2xl">✅</span>
                             </div>
                             <div>
                                 <h3 class="font-bold text-lg mb-1" data-lang-inline="en" class="active">Safe Virtual Environment</h3>
@@ -400,7 +400,7 @@
                     </div>
                 </div>
                 <div class="text-center">
-                    <div class="text-8xl mb-4"><img src="assets/icons/status/finish-flag.png" alt="goal" class="inline-block w-5 h-5 align-middle"></div>
+                    <div class="text-8xl mb-4">🎯</div>
                     <p class="text-2xl font-bold text-gray-800 heading-font">
                         <span data-lang-inline="en" class="active">Education + Fun = Lasting Skills</span>
                         <span data-lang-inline="es">Educación + Diversión = Habilidades Duraderas</span>
@@ -426,7 +426,7 @@
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <!-- Feature 1 -->
                 <div class="bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/icons/ui/bank.png" alt="bank" class="inline-block w-6 h-6 align-middle"></div>
+                    <div class="text-5xl mb-4">🏦</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">Virtual Bank Account</span>
                         <span data-lang-inline="es">Cuenta Bancaria Virtual</span>
@@ -443,7 +443,7 @@
 
                 <!-- Feature 2 -->
                 <div class="bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/decorations/coin-gold.png" alt="coin" class="inline-block w-5 h-5 align-middle"></div>
+                    <div class="text-5xl mb-4">💰</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">Allowance Management</span>
                         <span data-lang-inline="es">Gestión de Mesada</span>
@@ -460,7 +460,7 @@
 
                 <!-- Feature 3 -->
                 <div class="bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/icons/status/finish-flag.png" alt="goal" class="inline-block w-5 h-5 align-middle"></div>
+                    <div class="text-5xl mb-4">🎯</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">Savings Goals</span>
                         <span data-lang-inline="es">Metas de Ahorro</span>
@@ -477,7 +477,7 @@
 
                 <!-- Feature 4 -->
                 <div class="bg-gradient-to-br from-orange-50 to-orange-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/icons/status/lock.png" alt="lock" class="inline-block w-5 h-5 align-middle"></div>
+                    <div class="text-5xl mb-4">🔒</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">Parental Controls</span>
                         <span data-lang-inline="es">Controles Parentales</span>
@@ -494,7 +494,7 @@
 
                 <!-- Feature 5 -->
                 <div class="bg-gradient-to-br from-pink-50 to-pink-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/icons/ui/chart-bar.png" alt="chart" class="inline-block w-6 h-6 align-middle"></div>
+                    <div class="text-5xl mb-4">📊</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">Transaction History</span>
                         <span data-lang-inline="es">Historial de Transacciones</span>
@@ -511,7 +511,7 @@
 
                 <!-- Feature 6 -->
                 <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/icons/status/star.png" alt="trophy" class="inline-block w-6 h-6 align-middle"></div>
+                    <div class="text-5xl mb-4">🏆</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">Achievements & Badges</span>
                         <span data-lang-inline="es">Logros y Medallas</span>
@@ -528,7 +528,7 @@
 
                 <!-- Feature 7 -->
                 <div class="bg-gradient-to-br from-teal-50 to-teal-100 p-6 rounded-2xl card-hover">
-                    <div class="text-5xl mb-4"><img src="assets/icons/decorative/smartphone.png" alt="phone" class="inline-block w-5 h-5 align-middle"></div>
+                    <div class="text-5xl mb-4">📱</div>
                     <h3 class="text-xl font-bold mb-3 heading-font">
                         <span data-lang-inline="en" class="active">iOS & Android</span>
                         <span data-lang-inline="es">iOS y Android</span>
@@ -839,10 +839,10 @@
                 </a>
             </div>
             <div class="text-white text-sm">
-                <span data-lang-inline="en" class="active"><img src="assets/icons/status/lock.png" alt="lock" class="inline-block w-5 h-5 align-middle"> Safe • 🎮 Fun • 📚 Educational • 100% Virtual Currency</span>
-                <span data-lang-inline="es"><img src="assets/icons/status/lock.png" alt="lock" class="inline-block w-5 h-5 align-middle"> Seguro • 🎮 Divertido • 📚 Educativo • 100% Moneda Virtual</span>
-                <span data-lang-inline="fr"><img src="assets/icons/status/lock.png" alt="lock" class="inline-block w-5 h-5 align-middle"> Sûr • 🎮 Amusant • 📚 Éducatif • 100% Monnaie Virtuelle</span>
-                <span data-lang-inline="zh"><img src="assets/icons/status/lock.png" alt="lock" class="inline-block w-5 h-5 align-middle"> 安全 • 🎮 有趣 • 📚 教育性 • 100% 虚拟货币</span>
+                <span data-lang-inline="en" class="active">🔒 Safe • 🎮 Fun • 📚 Educational • 100% Virtual Currency</span>
+                <span data-lang-inline="es">🔒 Seguro • 🎮 Divertido • 📚 Educativo • 100% Moneda Virtual</span>
+                <span data-lang-inline="fr">🔒 Sûr • 🎮 Amusant • 📚 Éducatif • 100% Monnaie Virtuelle</span>
+                <span data-lang-inline="zh">🔒 安全 • 🎮 有趣 • 📚 教育性 • 100% 虚拟货币</span>
             </div>
         </div>
     </section>
