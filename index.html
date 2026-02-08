@@ -5,6 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PiggyLearn - Teach Your Kids Financial Literacy Through Play</title>
     <meta name="description" content="A safe, fun virtual banking app that teaches kids ages 6-14 about money management, saving, and financial responsibility.">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="keywords" content="kids allowance app, family bank, financial literacy, chore chart, savings tracker, piggy bank app, kids money management, allowance tracker">
+    <meta name="author" content="PiggyLearn">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://pulsational.github.io/piggylearn-website/">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PiggyLearn - Teach Your Kids Financial Literacy Through Play">
+    <meta property="og:description" content="A safe, fun virtual banking app that teaches kids about money management.">
+    <meta property="og:image" content="https://pulsational.github.io/piggylearn-website/assets/screenshots/hero-1-allowance.png">
+    <meta property="og:url" content="https://pulsational.github.io/piggylearn-website/">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PiggyLearn - Kids Financial Literacy App">
+    <meta name="twitter:description" content="Teach your kids about money management with our fun virtual banking app.">
+    <meta name="twitter:image" content="https://pulsational.github.io/piggylearn-website/assets/screenshots/hero-1-allowance.png">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "PiggyLearn",
+        "operatingSystem": "iOS",
+        "applicationCategory": "FinanceApplication",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "10"
+        },
+        "description": "A safe, fun virtual banking app that teaches kids ages 6-14 about money management, saving, and financial responsibility.",
+        "screenshot": "https://pulsational.github.io/piggylearn-website/assets/screenshots/hero-1-allowance.png",
+        "url": "https://apps.apple.com/app/piggylearn-family-allowance/id6737482101"
+    }
+    </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -191,12 +234,16 @@
                     </div>
                 </div>
                 
-                <!-- Hero Image -->
+                <!-- Hero Image - App Screenshots -->
                 <div class="flex justify-center items-center">
                     <div class="relative">
-                        <img src="assets/mascot/jasper-waving.png" alt="Jasper Mascot" class="w-full max-w-md float-animation drop-shadow-2xl">
-                        <div class="absolute top-10 right-0 bg-white rounded-full p-4 shadow-lg coin-animation">
-                            <span class="text-4xl"><img src="assets/decorations/coin-gold.png" alt="coin" class="inline-block w-12 h-12 md:w-14 md:h-14"></span>
+                        <!-- Main Screenshot -->
+                        <img src="assets/screenshots/hero-1-allowance.png" alt="PiggyLearn App Screenshot" class="w-full max-w-sm rounded-3xl shadow-2xl float-animation">
+                        <!-- Floating Mascot -->
+                        <img src="assets/mascot/jasper-waving.png" alt="Jasper Mascot" class="absolute -bottom-8 -left-12 w-28 h-28 drop-shadow-xl hidden md:block">
+                        <!-- Floating Coin -->
+                        <div class="absolute top-8 -right-4 bg-white rounded-full p-3 shadow-lg coin-animation">
+                            <img src="assets/decorations/coin-gold.png" alt="coin" class="w-10 h-10">
                         </div>
                     </div>
                 </div>
